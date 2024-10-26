@@ -1,0 +1,169 @@
+/*
+***********
+* Fuentes *
+*********** */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+// Fuentes para texto
+$Arial-DM-Sans: Arial, "DM Sans", "Helvetica Neue", Helvetica, sans-serif, system-ui;
+
+// Fuentes para numeros
+$monospace: "Lucida Console", monospace, "Courier New", Consolas, Courier, Consolas, SFMono-Regular, Menlo, Monaco, "Liberation Mono", ui-monospace;
+
+/*
+*******************
+* Colores de Sass *
+******************* */
+
+$light-petrol-blue: #00657f;   // color del manual de la marca Bios
+$dark-petrol-blue: #004853;    // color del manual de la marca Bios
+
+
+$light-green-pantone: #aacf00; // color del manual de la marca Bios
+$active-color: #5fd068;
+
+$dark-orange-yellow: #c57f1e;
+
+$light-beige: #ecebe0;         // color del manual de la marca Bios
+$medium-beige: #f5f0eb;
+$dark-beige: #666666;
+
+$error-color: #761200;
+
+/*
+*******************************
+* Colores de Angular Material *
+******************************* */
+
+$md-dixie: (
+  50: #e0f3f6,
+  100: #b3e0e8,
+  200: #80cdd9,
+  300: #4dbacb,
+  400: #26adb9,
+  500: #009aa7,
+  600: #008b97,
+  700: #007884,
+  800: #00657f,
+  900: #004853,
+  A100: #a6f0ff,
+  A200: #73e7ff,
+  A400: #40ddff,
+  A700: #26d9ff,
+
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-ebonyClay: (
+  50: #e4e5e6,
+  100: #bdbfc2,
+  200: #919499,
+  300: #646970,
+  400: #434851,
+  500: #222832,
+  600: #1e242d,
+  700: #191e26,
+  800: #14181f,
+  900: #0c0f13,
+  A100: #a6f0ff,
+  A200: #73e7ff,
+  A400: #40ddff,
+  A700: #26d9ff,
+
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+/*
+****************************************
+* border-radius borde redondeado de... *
+**************************************** */
+
+// ventanas modales
+$rounded-dialog: 15px;
+
+// tablas
+$rounded-table: 10px;
+
+/*
+****************
+* margin de... *
+**************** */
+
+// <mat-expansion-panel>
+$margin-mat-expansion-panel: 16px;
+
+/*
+****************
+* padding de... *
+**************** */
+
+// <mat-button-toggle-group> - botones agrupados
+$padding-button-toggle: 10px;
+
+/*
+***********************************
+* font-size tamaño de letra de... *
+*********************************** */
+
+// tablas
+$text-xs: 13px;
+
+/*
+**************************
+* border delineado de... *
+************************** */
+
+// casillas de las tablas
+$border-table: 1.2px solid rgba(0, 0, 0, 0.12);
+
+/*
+**********************
+* width ancho de... *
+********************** */
+
+// las tablas ocupan todo el ancho de su contenedor padre
+$w-table: calc(100% - 1px);
+
+/*
+**************************************************
+* Breakpoints para media queries (Responsive)    *
+* https://tailwindcss.com/docs/responsive-design *
+************************************************** */
+$xsm: 30rem;   // 480px
+$sm: 40rem;    // 640px
+$md: 48rem;    // 768px
+$lg: 64rem;    // 1024px
+$xl: 80rem;    // 1280px
+$xxl: 96rem;   // 1536px
+$xxxl: 120rem; // 1920px

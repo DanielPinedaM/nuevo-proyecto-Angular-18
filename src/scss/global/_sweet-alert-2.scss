@@ -1,0 +1,40 @@
+@import "./branding";
+
+/*
+***************
+* SweetAlert2 *
+*************** */
+
+div.swal2-container {
+  div.swal2-popup {
+    border-radius: $rounded-dialog !important;
+    background-color: $light-beige;
+  }
+
+  button.swal2-confirm,
+  button.swal2-cancel {
+    color: $light-beige !important;
+    padding: 0.375rem 1.25rem !important;
+    border-radius: 0.75rem !important;
+    font-weight: 500 !important;
+    &:hover {
+      opacity: 0.75 !important;
+    }
+  }
+
+  button.swal2-confirm {
+    background-color: $light-petrol-blue !important;
+  }
+
+  button.swal2-cancel {
+    background-color: $dark-orange-yellow !important;
+  }
+
+  button.swal2-close {
+    color: $dark-petrol-blue !important;
+    font-weight: 300 !important;
+    &:hover {
+      color: $dark-petrol-blue !important;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+/*
+********************
+* Angular Material *
+******************** */
+
+@use '@angular/material' as mat;
+
+@import "./global/branding";
+
+@include mat.core();
+
+$Bios-consumo-micro-servicios-front-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($Bios-consumo-micro-servicios-front-theme);
+}
+
+@import "./global/angular-material";
+
+/*
+**********************************************************
+* Iconos de Angular Material - material-symbols-outlined *
+* https://fonts.google.com/icons                         *
+* https://www.npmjs.com/package/material-symbols         *
+********************************************************** */
+
+@import './../../node_modules/material-symbols/index.css';
+
+/*
+*************
+* Reset CSS *
+************* */
+
+@import "./global/reset-CSS";
+
+/*
+*********************************************************
+* Tailwind                                              *
+* https://tailwindcss.com/docs/using-with-preprocessors *
+********************************************************* */
+
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/*
+***************
+* sweet alert *
+*************** */
+
+@import "./global/sweet-alert-2";
+
+/*
+*******************
+* Barra de scroll *
+******************* */
+
+@import "./global/scroll-bar";
+
+/*
+*************************************
+* Colores en toda la web (globales) *
+************************************* */
+
+@import "./global/color";

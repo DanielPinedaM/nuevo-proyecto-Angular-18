@@ -1,0 +1,65 @@
+@import "./branding";
+
+/*
+*************************************************************************************
+* Angular Material - eliminar espacio en blanco en la parte de abajo de los <input> *
+************************************************************************************* */
+
+.remove-white-space {
+  > div.mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+
+    div.mat-form-field-subscript-wrapper {
+      display: none !important;
+    }
+  }
+
+  .mat-form-field-underline {
+    bottom: 0 !important;
+  }
+}
+
+/*
+************************************************
+* Angular Material - ventanas modales (dialog) *
+*********************************************** */
+
+mat-dialog-container {
+  position: relative !important;
+  padding: 30px 20px !important;
+
+  border-radius: $rounded-dialog !important;
+  height: auto !important;
+  max-height: 95vh !important;
+  max-height: 95dvh !important;
+  overflow-y: auto !important;
+
+  background-color: $medium-beige !important;
+  div.mat-mdc-dialog-surface {
+    border-radius: 0 !important;
+    background-color: $medium-beige !important;
+  }
+}
+
+/*
+********************************************************************
+* Angular Material - <mat-error> - mensaje de error de los <input> *
+******************************************************************** */
+
+mat-error {
+  color: $error-color !important;
+  font-size: 12px !important;
+}
+
+/*
+*********************************************************************************************************
+* Angular Material - Cuadro de Texto - Viñeta Desplegable - Leer más - Widget de Divulgación o Expansor *
+********************************************************************************************************* */
+
+mat-accordion {
+  mat-expansion-panel:not(:last-child),
+  .mat-expansion-panel-spacing:not(:last-child) {
+    // espacio entre cada <mat-expansion-panel>
+    margin-bottom: $margin-mat-expansion-panel !important;
+  }
+}

@@ -1,0 +1,33 @@
+<section>
+  <form [formGroup]="formLogin" class="flex flex-col gap-y-2" (submit)="onSubmitLogin()">
+    <div class="w-60">
+      <mat-form-field appearance="fill" class="block w-full">
+        <mat-label>Usuario directorio activo:</mat-label>
+        <input matInput formControlName="user" placeholder="Usuario directorio activo">
+      </mat-form-field>
+    </div>
+
+    <div class="w-60">
+      <mat-form-field appearance="fill" class="block w-full">
+        <mat-label>Clave directorio activo:</mat-label>
+        <input matInput
+               [type]="showPassword ? 'password' : 'text'"
+               formControlName="password"
+               placeholder="Clave directorio activo">
+        <button type="button"
+                mat-icon-button
+                matSuffix
+                [matTooltip]="showPassword ? 'mostrar contraseña' : ' ocultar contraseña'"
+                (click)="onClickSetShowPassword($event)">
+          <span class="material-symbols-outlined">{{showPassword ? 'visibility_off' : 'visibility'}}</span>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button type="submit" class="primary" [disabled]="formLogin.invalid">
+        Ingresar
+      </button>
+    </div>
+  </form>
+</section>

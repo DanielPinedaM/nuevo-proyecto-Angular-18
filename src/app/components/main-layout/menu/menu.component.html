@@ -1,0 +1,48 @@
+<menu class="bg-light-petrol-blue h-full text-white py-4 px-2 flex flex-col justify-evenly overflow-y-auto">
+  <li class="px-3.5 mb-10">
+    @if (showText) {
+    <img class="w-44" src="./assets/img/logo/bios/bios-white.svg" alt="Logo de Bios">
+    } @else {
+    <img class="w-10" src="./assets/img/logo/bios/bios-sheet.svg" alt="Logo de Bios">
+    }
+  </li>
+
+  <li [ngClass]="{'p-2': true,
+                  'flex justify-center': !showText}">
+    <button (click)="onClickMinimizeOrMaximizeMenu()" class="flex items-center gap-x-2"
+      [matTooltip]="!showText ? 'Maximizar Menú' : ''" matTooltipPosition="right">
+      @if (showText) {
+      <img class="w-8" src="./assets/icon/menu/icon-close-menu.svg" alt="cerrar menu">
+      <p>Minimizar Menú</p>
+      } @else {
+      <img class="w-8" src="./assets/icon/menu/icon-open-menu.svg" alt="abrir menu">
+      }
+    </button>
+  </li>
+
+  @for (item of menuOptions; track $index) {
+  <li [ngClass]="{'p-2 rounded-md': true,
+                  'flex justify-center': !showText,
+                  'bg-dark-petrol-blue': currentRoute === item.path
+                 }">
+    <a [routerLink]="item.path" [matTooltip]="!showText ? item.text : ''" matTooltipPosition="right"
+      class="flex items-center gap-x-2">
+      <span class="material-symbols-outlined">{{ item.angularMaterialIcon }}</span>
+      @if (showText) {
+      <p>{{ item.text }}</p>
+      }
+    </a>
+  </li>
+  }
+
+  <li [ngClass]="{'p-2': true,
+                  'flex justify-center': !showText}">
+    <button (click)="onClickLogOut()" [matTooltip]="!showText ? 'Cerrar sesión' : ''" matTooltipPosition="right"
+      class="flex items-center gap-x-2">
+      <span class="material-symbols-outlined">logout</span>
+      @if (showText) {
+      <p>Cerrar sesión</p>
+      }
+    </button>
+  </li>
+</menu>

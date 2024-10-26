@@ -1,0 +1,412 @@
+@import "./branding";
+
+// COLORES EN TODA LA WEB (GLOBALES)
+
+/*
+*********
+* Boton *
+********* */
+
+button.btn,
+button#btn,
+button.primary,
+button.secondary,
+button.mat-primary {
+  border: 0 !important;
+  outline: 0 !important;
+  padding: 10px 16px !important;
+  border-radius: 50px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.5px !important;
+  color: $light-beige !important;
+  height: fit-content !important;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  p,
+  span,
+  span[class*="material-symbols"] {
+    color: $light-beige !important;
+  }
+}
+
+/*
+***********************************************
+* Boton primario: Aceptar, Registrar, Agregar *
+*********************************************** */
+
+button.primary,
+button.mat-fab {
+  background-color: $dark-petrol-blue;
+}
+
+/*
+***************************************************
+* Boton secundario: Cancelar, Modificar, Eliminar *
+*************************************************** */
+
+button.secondary {
+  background-color: $light-green-pantone;
+}
+
+/*
+**************************************
+* Boton para cerrar ventanas modales *
+************************************** */
+
+a.btn-close {
+  background-color: $light-petrol-blue !important;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  span {
+    color: $dark-orange-yellow !important;
+  }
+}
+
+/*
+****************************
+* Angular Material - tabla *
+**************************** */
+
+// barra scroll a las tablas cuando se desbordan
+div.table-container {
+  overflow: auto !important;
+}
+
+table:not(.mat-calendar-table),
+mat-table:not(.mat-calendar-table),
+.mat-table:not(.mat-calendar-table),
+mat-table.mat-table:not(.mat-calendar-table) {
+  // las tablas ocupan todo el ancho de su contenedor padre div.table-container
+  width: $w-table !important;
+  max-width: initial !important;
+  min-width: initial !important;
+  table-layout: auto !important;
+  display: table !important;
+
+  // centrar horizontal las tablas
+  margin-inline: auto;
+
+  // Juntar los bordes (casillas) de las tablas
+  border-collapse: collapse !important;
+
+  // eliminar espacio de las tablas entre cada una de las casillas
+  border-spacing: 0 !important;
+
+  // color de fondo de la tabla
+  background-color: $light-beige !important;
+
+  // borde redondeado del encabezado de la tabla
+  border-top-left-radius: $rounded-table !important;
+  border-top-right-radius: $rounded-table !important;
+
+  // eliminar sombra de las tablas
+  box-shadow: none !important;
+
+  // tamaño letra de tabla
+  font-size: $text-xs !important;
+
+  // tamaño de iconos de Angular Material dentro de tabla
+  span[class*="material-symbols"] {
+    font-size: 20px !important;
+  }
+
+  tr {
+    // fijar encabezado de tabla al hacer scroll
+    position: sticky;
+    top: 0;
+
+    // titulo <th> de las columnas
+    th {
+      background-color: $dark-petrol-blue !important;
+      color: $light-beige !important;
+      font-weight: bold !important;
+
+      // centrar horizontal y vertical texto de <th>
+      text-align: center !important;
+      div.th-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      // iconos de Angular Material
+      span[class*="material-symbols"] {
+        color: $light-beige !important;
+      }
+
+      // centrar horizontal encabezado <th> de tablas q se pueden ordenar ascendente y descendente
+      div.mat-sort-header-container {
+        justify-content: center;
+      }
+
+      // borde de <checkbox> de Angular Material
+      .mat-checkbox-frame {
+        border-color: $light-beige !important;
+      }
+
+      // borde redondeado de tabla
+      &:first-child {
+        border-radius: $rounded-table 0px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 $rounded-table 0 0;
+      }
+    }
+
+    // contenido (informacion) de las tablas
+    td {
+      &.normal-empty {
+        background-color: $light-petrol-blue !important;
+        color: $light-beige !important;
+      }
+
+      // centrar vertical texto de <td>
+      div.th-container {
+        display: flex;
+        align-items: center;
+      }
+
+      // centrar contenido de las casillas de las tablas <td>
+      div.flex-full-center {
+        width: 100%;
+        height: 100%;
+      }
+
+      // color de iconos q estan en la ultima columna de la derecha de las tablas,
+      // casi siempre usado para la columna llamada Acciones
+      // para q esto funcione la columna "Acciones" SIEMPRE tiene q ser la ULTIMA de la derecha
+      // Ejemplo: displayedColumns: string[] = ['columna1', 'columna2', 'columna3', 'actions'];
+      &:last-child {
+        span[class*="material-symbols"] {
+          color: $dark-beige !important;
+        }
+      }
+    }
+
+    // <tr class="mat-row" *matNoDataRow> mensaje "No hay datos" al buscar en tabla
+    &.mat-no-data-row {
+      background-color: $light-beige !important;
+      color: $dark-petrol-blue !important;
+      text-align: center !important;
+
+      td,
+      td.mat-cell {
+        background-color: $light-beige !important;
+        color: $dark-petrol-blue !important;
+        text-align: center !important;
+      }
+    }
+  }
+
+  // borde de las casillas de las tablas
+  outline: $border-table !important;
+
+  // etiquetas
+  tr,
+  th,
+  td,
+
+  // mat-cell
+  mat-cell,
+  .mat-cell,
+  td.mat-cell,
+
+  // mat-header-cell
+  mat-header-cell,
+  .mat-header-cell,
+
+  // mat-footer-cell
+  mat-footer-cell,
+  .mat-footer-cell {
+   border: 0 !important;
+   outline: $border-table !important;
+  }
+
+  // hacer q el alto de las casillas de las tablas sea el mismo q el de su contenido
+  //<button mat-icon-button>
+  button.mat-icon-button {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    span.mat-button-wrapper {
+      line-height: 1.2 !important;
+    }
+  }
+
+  // etiquetas
+  thead,
+  tr,
+  th,
+  tbody,
+  td,
+  td.custom-cell,
+  td.nonormal,
+
+  // mat-footer-row
+  mat-footer-row,
+  .mat-footer-row,
+  tr.mat-footer-row,
+
+  // mat-row
+  mat-row,
+  .mat-row,
+  tr.mat-row,
+
+  // mat-header-row
+  mat-header-row,
+  .mat-header-row,
+  tr.mat-header-row,
+
+  // mat-cell
+  mat-cell,
+  .mat-cell,
+  td.mat-cell,
+
+  // mat-header-cell
+  mat-header-cell,
+  .mat-header-cell,
+
+  // mat-footer-cell
+  mat-footer-cell,
+  .mat-footer-cell {
+    // hacer q el alto de las casillas de las tablas sea el mismo q el de su contenido
+    min-height: initial !important;
+    max-height: initial !important;
+    height: auto !important;
+
+    // tamaño letra de tabla
+    font-size: $text-xs !important;
+
+    // alto maximo de todas las casillas de las tablas
+    max-height: 10px !important;
+  }
+}
+
+/*
+*****************************************
+* Angular Material - paginador de tabla *
+***************************************** */
+
+mat-paginator,
+.mat-paginator {
+  // las tablas ocupan todo el ancho de su contenedor padre
+  width: $w-table !important;
+
+  margin-inline: auto;
+}
+
+mat-paginator,
+.mat-paginator,
+mat-mat-paginator,
+.mat-mdc-paginator {
+  background-color: $light-beige !important;
+  border-radius: 0 0 $rounded-table $rounded-table;
+}
+
+/*
+*******************************************************************************************
+* Angular Material - flecha de las tablas para ordenar ascendente y descendente las filas *
+******************************************************************************************* */
+
+.mat-sort-header-sorted,
+.mat-sort-header-arrow {
+  color: $light-beige !important;
+}
+
+::ng-deep {
+  .mat-table-sticky-border-elem-right {
+    border-left: 1px solid $light-beige;
+  }
+
+  .mat-table-sticky-border-elem-left {
+    border-right: 1px solid $light-beige;
+  }
+}
+
+/*
+************
+* Sub-menu *
+************ */
+
+section {
+  .macro-modules {
+    .module-button {
+      background-color: $dark-petrol-blue !important;
+
+      span {
+        color: $medium-beige !important;
+      }
+    }
+  }
+
+  .child-modules {
+    .module-button {
+      background-color: $light-beige !important;
+
+      span {
+        color: $light-petrol-blue;
+      }
+    }
+  }
+}
+
+/*
+********************************************************************
+* Angular Material - <mat-button-toggle-group> - botones agrupados *
+******************************************************************** */
+
+mat-button-toggle-group,
+mat-button-toggle-group.chek-toggle,
+.chek-toggle {
+  border-radius: 15px;
+
+  .mat-button-toggle {
+    background-color: $light-petrol-blue !important;
+    color: $light-beige;
+
+    &:first-child {
+      padding-left: $padding-button-toggle !important;
+    }
+
+    &:last-child {
+      padding-right: $padding-button-toggle !important;
+    }
+  }
+
+  .mat-button-toggle-checked {
+    background-color: $light-green-pantone !important;
+  }
+}
+
+/*
+*********************************************************************************************************************************
+* Angular Material - <mat-expansion-panel> - Cuadro de Texto - Viñeta Desplegable - Leer más - Widget de Divulgación o Expansor *
+********************************************************************************************************************************* */
+
+.mat-expansion-panel,
+.mat-expansion-panel-body {
+  background-color: $light-beige !important;
+}
+
+/*
+*****************************************
+* Angular Material - <mat-menu> - Menu *
+**************************************** */
+
+div.mat-menu-content {
+  span[class*="material-symbols"] {
+    color: $dark-petrol-blue !important;
+  }
+}
