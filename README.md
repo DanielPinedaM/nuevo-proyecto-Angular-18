@@ -49,11 +49,11 @@
 #### Instalar paquetes
 
 ```javascript
-nvm install 22
+nvm install 22.11.0
 ```
 
 ```javascript
-nvm use 22
+nvm use 22.11.0
 ```
 
 ```javascript
@@ -63,21 +63,26 @@ npm i
 #### [Ejecutar proyecto](https://youtu.be/xBMEvd7PyEY?si=4KH0nBKGi1dz0rW1)
 
 ```javascript
-nvm use 22
+nvm use 22.11.0
 ```
 
 comando | apunta a... | ruta archivo
 ------------ | ------------- | -------------
-npm start | localhost | src/environments/environment.development.ts
-npm run start:test | pruebas | src/environments/environment.test.ts
-npm run start:prod | producción | src/environments/environment.ts
+node --run start | localhost | src/environments/environment.development.ts
+node --run start:test | pruebas | src/environments/environment.test.ts
+node --run start:prod | producción | src/environments/environment.ts
 
 #### Generar build (dist) para desplegar
 
+```
+javascript
+nvm use 22.11.0
+```
+
 comando | apunta a... | ruta archivo
 ------------ | ------------- | -------------
-npm run build:test | pruebas | src/environments/environment.test.ts
-npm run build:prod | producción | src/environments/environment.ts
+node --run build:test | pruebas | src/environments/environment.test.ts
+node --run build:prod | producción | src/environments/environment.ts
 
 #### Maquetación
 * Todos los componentes de Angular **no** pueden tener archivos de Sass con ```styleUrls```, se tiene que maquetar en Tailwind.
