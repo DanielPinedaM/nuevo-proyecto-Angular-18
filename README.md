@@ -74,8 +74,7 @@ node --run start:prod | producción | src/environments/environment.ts
 
 #### Generar build (dist) para desplegar
 
-```
-javascript
+```javascript
 nvm use 22.11.0
 ```
 
