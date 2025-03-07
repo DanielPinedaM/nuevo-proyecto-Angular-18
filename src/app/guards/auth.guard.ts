@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
         if (sessionStorageSearch(objSessionStorage.token!)) {
             return true;
         } else {
-            this.router.navigate(['/' + path.login.login]);
+            this.router.navigate(['/' + path.auth.login]);
             return false;
         }
     }

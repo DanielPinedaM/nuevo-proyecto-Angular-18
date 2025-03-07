@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: string) => {
       if (result === 'accept') {
-        this.router.navigate(['/' + path.login.login])
+        this.router.navigate(['/' + path.auth.login])
       }
     });
   }

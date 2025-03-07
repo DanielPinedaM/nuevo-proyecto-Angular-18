@@ -1,3 +1,4 @@
+import DataTypeClass from '@/app/utils/class/DataTypeClass';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -34,37 +35,57 @@ export class LoginComponent implements OnInit {
 
     const { user, password } = this.formLogin.value;
 
-    const body: any = {
-      uno: user,
-      dos: password,
+        /* const { success, message, data } = await this.httpService.request(
+      'POST',
+      environment.auth.login,
+      { body: this.formLogin.value }
+    );
+
+    if (success) {
+      this.setSessionStorage(data);
+      this.router.navigate(data.initRoute);
+    } else {
+      console.error(message);
+    } */
+
+    console.log('enviando peticion a ', environment.auth.login);
+
+    const data = {
+      token: 'hola mundo',
+      username: 'Yeison Alvarez Balvin',
     };
 
-    console.log('enviando peticion a ', environment.user.login);
-
-    const resp = {
-      data: {
-        token: 'hola mundo',
-        username: 'Yeison Alvarez Balvin',
-      },
-    };
-    this.setSessionStorage(resp);
-
+    this.setSessionStorage(data);
     this.router.navigate(['/' + path.home.home + '/' + path.home.bots]);
   }
 
-  setSessionStorage(resp: any): void {
-    const user = resp?.data;
+  setSessionStorage(data: { [key: string]: any }): void {
+    if (!data || DataTypeClass.literalObjectLength(data) <= 0) {
+      console.error(
+        '❌ error, NO se puede setear el Session Storage porque la api NO ha respondido con los datos para guardar',
+        '\n',
+        data
+      );
 
-    if (Object?.keys(user)?.length) {
-      Object.entries(user).map((entry: any) => {
-        const [property, value] = entry;
-        if (property) {
-          sessionStorageSaveAndUpdate(property, value);
-        }
-      });
-    } else {
-      console.error('❌ error', '\n', 'no se puede setear el sessionStorage porque en la respuesta de la API no existe la propiedad resp?.data', '\n', resp);
+      return;
     }
+
+    Object.entries(data).forEach((entry) => {
+      const [key, value] = entry;
+
+      if (!key || !value) {
+        console.error(
+          '❌ error, en la data q responde el back al loguearse alguna key o value es falsy ',
+          key,
+          value
+        );
+        return;
+      }
+
+      if (key) {
+        sessionStorageSaveAndUpdate(key, value);
+      }
+    });
   }
 
   onClickSetShowPassword(event: Event): void {
