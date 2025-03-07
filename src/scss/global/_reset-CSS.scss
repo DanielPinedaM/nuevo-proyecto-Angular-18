@@ -12,6 +12,19 @@
 }
 
 /*
+******************************************************************
+* forzar tema blanco en navegadores configurados con tema oscuro *
+****************************************************************** */
+
+* {
+  color-scheme: only light !important;
+}
+
+:root {
+  color-scheme: only light !important;
+}
+
+/*
 ***********************************************
 * etiquetas padre contenedoras de toda la web *
 *********************************************** */
