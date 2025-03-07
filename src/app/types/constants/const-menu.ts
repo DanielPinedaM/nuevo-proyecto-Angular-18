@@ -1,5 +1,5 @@
 import IMenuOptions from '../interfaces/interface-menu';
-import path from './constant-path';
+import path from './const-path';
 
 const menuOptions: IMenuOptions[] = [
   {

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import path from '../../types/constants/const-path';
 import {
   sessionStorageDeleteAll,
   sessionStorageSaveAndUpdate,
 } from '../../utils/func/sessionStorage';
-import { Router } from '@angular/router';
-import path from '../../types/constants/constant-path';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',

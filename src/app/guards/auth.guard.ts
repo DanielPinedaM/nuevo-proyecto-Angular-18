@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import path  from '../types/constants/constant-path';
+import path from '../types/constants/const-path';
+import { objSessionStorage } from '../types/constants/const-session-storage';
 import { sessionStorageSearch } from '../utils/func/sessionStorage';
-import { objSessionStorage } from '../types/constants/constant-session-storage';
 
 @Injectable({
     providedIn: 'root',

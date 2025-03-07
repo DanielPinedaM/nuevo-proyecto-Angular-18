@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
-import path from './types/constants/constant-path';
+import path from './types/constants/const-path';
 
 //#region componentes de Angular
 // login

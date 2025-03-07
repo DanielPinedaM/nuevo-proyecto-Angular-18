@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import path from '../../../types/constants/constant-path';
+import path from '../../../types/constants/const-path';
 
 @Component({
   selector: 'app-error-404-non-existent-path',

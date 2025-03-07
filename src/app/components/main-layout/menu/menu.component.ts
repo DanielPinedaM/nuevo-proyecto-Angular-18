@@ -1,11 +1,11 @@
+import { CurrentRouteService } from '@/app/service/RxJS-BehaviorSubject/current-route.service';
+import menuOptions from '@/app/types/constants/const-menu';
+import path from '@/app/types/constants/const-path';
+import IMenuOptions from '@/app/types/interfaces/interface-menu';
 import { Component, OnInit } from '@angular/core';
-import menuOptions from '../../../types/constants/constant-menu';
-import IMenuOptions from '../../../types/interfaces/interface-menu';
-import { CurrentRouteService } from '../../../service/RxJS-BehaviorSubject/current-route.service';
-import { Router } from '@angular/router';
-import path from '../../../types/constants/constant-path';
-import { DialogAcceptOrCancelComponent } from '../../home-route/dialog/dialog-accept-or-cancel/dialog-accept-or-cancel.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DialogAcceptOrCancelComponent } from '../../home-route/dialog/dialog-accept-or-cancel/dialog-accept-or-cancel.component';
 
 @Component({
   selector: 'app-menu',
