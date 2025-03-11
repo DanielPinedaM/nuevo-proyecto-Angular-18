@@ -73,3 +73,10 @@ $Bios-consumo-micro-servicios-front-theme: mat.define-theme((
 ************************************* */
 
 @import "./global/color";
+
+/*
+*********************
+* ngxpert hot toast *
+********************* */
+
+@use '@ngxpert/hot-toast/styles';

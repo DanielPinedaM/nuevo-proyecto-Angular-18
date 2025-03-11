@@ -24,7 +24,11 @@ export class LoginComponent implements OnInit {
     ]),
   });
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private httpService: HttpService,
+    private hotToast: HotToastClass
+  ) {}
 
   ngOnInit() {
     sessionStorageDeleteAll();
@@ -45,7 +49,7 @@ export class LoginComponent implements OnInit {
       this.setSessionStorage(data);
       this.router.navigate(data.initRoute);
     } else {
-      console.error(message);
+      this.hotToast.errorNotification(message);
     } */
 
     console.log('enviando peticion a ', environment.auth.login);
